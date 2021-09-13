@@ -62,11 +62,15 @@ nowcast_eval <- function(nowcast_object, n_week_adjusting){
   retval <- vector("list" , length = (n_week_adjusting))
 
   # Compute R2, mse, residualplot for every correction
+
+  # numbers of rows with corrected data
+  n_loc <- length(unique(data$location_code))
+  n_row_corrections <- n_loc *n_week_adjusting
   for (i in 0:(n_week_adjusting-1) ){
     temp <- paste0("ncor0_", i)
     data[, temp_variable := get(temp)]
     data[, residual:= temp_variable -n_death]
-    std <- (sum(data$residual[1:50]**2))**0.5
+    std <- (sum(data$residual[(nrow(data)- n_row_corrections +1):(nrow(data)- n_loc*i)]**2))**0.5 #this is rediculous!!! totally wrong
     data[, std_residual:= (temp_variable -n_death)/std]
 
     mean <- sum(data$n_death)/nrow(data)
@@ -103,6 +107,6 @@ nowcast_eval <- function(nowcast_object, n_week_adjusting){
     retval[[i +1]] <- temp_retval
   }
 
-   return (retval)
+  return (retval)
 }
 
