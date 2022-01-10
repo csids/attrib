@@ -200,7 +200,10 @@ nowcast_aggregate <- function(
   }
 
   d_within_week <- cbind.data.frame(retval)
-  d_within_week <- unique(as.data.table(d_within_week))
+  setDT(d_within_week)
+  d_within_week[, unique_id := 1:.N, by=.(cut_doe, location_code)]
+  d_within_week <- d_within_week[ unique_id == 1]
+  # d_within_week <- unique(as.data.table(d_within_week))
   d_within_week <- as.data.table(subset(d_within_week, select = unique(colnames(d_within_week))))
 
 
