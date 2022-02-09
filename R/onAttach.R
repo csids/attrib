@@ -1,7 +1,8 @@
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage(paste(
-    "attrib",
+  packageStartupMessage(paste0(
+    "attrib ",
     utils::packageDescription("attrib")$Version,
-    "https://folkehelseinstituttet.github.io/attrib"
+    "\n",
+    "https://docs.sykdomspulsen.no/attrib"
   ))
 }
