@@ -1,7 +1,14 @@
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage(paste0(
+  version <- tryCatch(
+    utils::attribDescription("attrib", fields = "Version"),
+    warning = function(w){
+      1
+    }
+  )
+
+  attribStartupMessage(paste0(
     "attrib ",
-    utils::packageDescription("attrib")$Version,
+    version,
     "\n",
     "https://docs.sykdomspulsen.no/attrib"
   ))
