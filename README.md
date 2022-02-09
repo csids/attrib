@@ -1,32 +1,37 @@
-# Attrib
+# attrib <a href="https://docs.sykdomspulsen.no/attrib"><img src="man/figures/logo.png" align="right" width="120" /></a>
 
-Attrib is designed to make the process of calculating attributable mortalities and incident risk ratios efficient and easy.
+## Overview 
+
+[attrib](https://docs.sykdomspulsen.no/attrib) is designed to make the process of calculating attributable mortalities and incident risk ratios efficient and easy.
 
 The package is based on generating simulations making it easy to aggregate all data from for example county to national levels or weekly to seasonal levels without losing information about credible intervals on the way. 
 
-## fhiverse
+Read the introduction vignette [here](https://docs.sykdomspulsen.no/attrib/articles/attrib.html) or run `help(package="attrib")`.
 
-The `fhiverse` is a set of R packages developed by the Norwegian Institute of Public Health to help solve problems that frequently occur when performing infectious disease surveillance.
+## splverse
 
-If you want to install the dev versions (or access packages that haven't been released on CRAN), run `usethis::edit_r_profile()` to edit your `.Rprofile`. Then write in:
+<a href="https://docs.sykdomspulsen.no/packages"><img src="https://docs.sykdomspulsen.no/packages/splverse.png" align="right" width="120" /></a>
+
+The [splverse](https://docs.sykdomspulsen.no/packages) is a set of R packages developed to help solve problems that frequently occur when performing infectious disease surveillance.
+
+If you want to install the dev versions (or access packages that haven't been released on CRAN), run `usethis::edit_r_profile()` to edit your `.Rprofile`. 
+
+Then write in:
 
 ```
-options(repos=structure(c(
-  FHI="https://folkehelseinstituttet.github.io/drat/",
-  CRAN="https://cran.rstudio.com"
-)))
+options(
+  repos = structure(c(
+    FHI  = "https://folkehelseinstituttet.github.io/drat/",
+    CRAN = "https://cran.rstudio.com"
+  ))
+)
 ```
 
-Save the file and restart R. This will allow you to install `fhiverse` packages from the FHI registry.
+Save the file and restart R.
 
-Current `fhiverse` packages are:
+You can now install [splverse](https://docs.sykdomspulsen.no/packages) packages from the FHI registry.
 
-| Name    	| Info                                                             	|
-|---------	|------------------------------------------------------------------	|
-| [org](https://folkehelseinstituttet.github.io/org)         	| A system to help you organize projects.  |
-| [plnr](https://folkehelseinstituttet.github.io/plnr)    	  | A system to help you plan analyses.  |
-| [attrib](https://folkehelseinstituttet.github.io/attrib)  	| Calculating attributable mortalities and incident risk ratios.  |
-| [spread](https://folkehelseinstituttet.github.io/spread)  	| Different infectious disease spread models.  |
-| [fhidata](https://folkehelseinstituttet.github.io/fhidata) 	| Preformatted structural data for Norway.  |
-| [fhimaps](https://folkehelseinstituttet.github.io/fhimaps) 	| Preformatted maps of Norway that generally don't need geolibraries.  |
-| [fhiplot](https://folkehelseinstituttet.github.io/fhiplot) 	| Helpful functions for creating outputs in the style used by FHI.  |
+```
+install.packages("attrib")
+```
+
