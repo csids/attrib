@@ -1,12 +1,12 @@
 .onAttach <- function(libname, pkgname) {
   version <- tryCatch(
-    utils::attribDescription("attrib", fields = "Version"),
+    utils::packageDescription("attrib", fields = "Version"),
     warning = function(w){
       1
     }
   )
 
-  attribStartupMessage(paste0(
+  packageStartupMessage(paste0(
     "attrib ",
     version,
     "\n",
