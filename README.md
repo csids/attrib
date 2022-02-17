@@ -21,7 +21,7 @@ Then write in:
 ```
 options(
   repos = structure(c(
-    FHI  = "https://folkehelseinstituttet.github.io/drat/",
+    SPLVERSE  = "https://docs.sykdomspulsen.no/drat/",
     CRAN = "https://cran.rstudio.com"
   ))
 )
@@ -29,7 +29,7 @@ options(
 
 Save the file and restart R.
 
-You can now install [splverse](https://docs.sykdomspulsen.no/packages) packages from the FHI registry.
+You can now install [splverse](https://docs.sykdomspulsen.no/packages) packages from our [drat registry](https://docs.sykdomspulsen.no/drat).
 
 ```
 install.packages("attrib")
