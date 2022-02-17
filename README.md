@@ -22,7 +22,7 @@ Then write in:
 options(
   repos = structure(c(
     SPLVERSE  = "https://docs.sykdomspulsen.no/drat/",
-    CRAN = "https://cran.rstudio.com"
+    CRAN      = "https://cran.rstudio.com"
   ))
 )
 ```
