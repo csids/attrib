@@ -10,6 +10,6 @@
     "attrib ",
     version,
     "\n",
-    "https://docs.sykdomspulsen.no/attrib"
+    "https://www.csids.no/attrib/"
   ))
 }
