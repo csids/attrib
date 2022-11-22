@@ -15,7 +15,7 @@
 #' @param ranef Random effekts, default is NULL
 #' @param offset Offset, can be NULL
 #' @examples \dontrun{
-#' data <- as.data.table(data_fake_nowcasting_county_aggregated)
+#' data <- attrib::data_fake_nowcasting_county_aggregated
 #' n_sim <- 100
 #' fixef <- "sin(2 * pi * (week) / 53) + cos(2 * pi * (week ) / 53) + year"
 #' ranef <- "(1|location_code)"
@@ -27,7 +27,7 @@
 #' }
 #' @examples
 #' data <- data.table::as.data.table(data_fake_nowcasting_county_aggregated)
-#' data <- data[location_code == "county03"]
+#' data <- data[location_code == "county_nor03"]
 #' n_sim <- 100
 #' fixef <- "sin(2 * pi * (week) / 53) + cos(2 * pi * (week ) / 53) + year"
 #' ranef <- NULL

@@ -38,14 +38,15 @@ Data fit using glmer from lme4 with family poisson to fit the dataset with the g
 }
 \examples{
 
-response <- "deaths"
+response <- "deaths_n"
 
-fixef <- "pr100_ili_lag_1 + sin(2 * pi * (week - 1) / 52) + cos(2 * pi * (week - 1) / 52)"
-ranef <- " (pr100_ili_lag_1| season)"
-offset <- "log(pop)"
+fixef <- "ili_isoweekmean7_13_pr100 +
+  sin(2 * pi * (isoweek - 1) / 52) +
+  cos(2 * pi * (isoweek - 1) / 52)"
+ranef <- " (ili_isoweekmean7_13_pr100| season)"
+offset <- "log(pop_jan1_n)"
 
-data <- attrib::data_fake_nation
-
+data <- attrib::data_fake_attrib_nation
 
 fit_attrib(data = data, response = response, fixef = fixef, ranef = ranef, offset = offset)
 }

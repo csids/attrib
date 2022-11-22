@@ -1,6 +1,6 @@
 Package: attrib
 Title: Attributable Burden of Disease
-Version: 2021.1.2
+Version: 2022.11.22
 Authors@R: c(
   person(c("Richard","Aubrey"), "White", email = "hello@rwhite.no", role = c("aut", "cre"),
     comment = c(ORCID = "0000-0002-6747-1726")
@@ -32,9 +32,9 @@ Imports: data.table,
     ggplot2,
     utils,
     progress,
-    fhidata
+    csdata
 Suggests: testthat,
     knitr,
     rmarkdown
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 VignetteBuilder: knitr

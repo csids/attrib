@@ -18,15 +18,17 @@
 #'
 #' @examples
 #' \dontrun{
-#' response <- "deaths"
-#' fixef <- "pr100_ili_lag_1 + sin(2 * pi * (week - 1) / 52) + cos(2 * pi * (week - 1) / 52)"
-#' ranef <- " (pr100_ili_lag_1| season)"
+#' response <- "deaths_n"
+#' fixef <- "ili_isoweekmean7_13_pr100 +
+#'   sin(2 * pi * (isoweek - 1) / 52) +
+#'   cos(2 * pi * (isoweek - 1) / 52)"
+#' ranef <- " (ili_isoweekmean7_13_pr100| season)"
 #' offset <- "log(pop)"
 #'
-#' data <- attrib::data_fake_nation
+#' data <- attrib::data_fake_attrib_nation
 #'
 #' fit <- fit_attrib(data = data, response = response, fixef = fixef, ranef = ranef, offset = offset)
-#' exposures <- c(pr100_ili_lag_1 = 0)
+#' exposures <- c(ili_isoweekmean7_13_pr100 = 0)
 #' n_sim <- 5
 #' new_data <- est_attrib(fit, data, exposures, n_sim)
 #' new_data[]

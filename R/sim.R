@@ -14,12 +14,15 @@
 #'
 #' @examples
 #'
-#' response <- "deaths"
-#' fixef <- "pr100_ili_lag_1 + sin(2 * pi * (week - 1) / 52) + cos(2 * pi * (week - 1) / 52)"
-#' ranef <- " (pr100_ili_lag_1| season)"
-#' offset <- "log(pop)"
+#' response <- "deaths_n"
 #'
-#' data <- attrib::data_fake_nation
+#' fixef <- "ili_isoweekmean7_13_pr100 +
+#'   sin(2 * pi * (isoweek - 1) / 52) +
+#'   cos(2 * pi * (isoweek - 1) / 52)"
+#' ranef <- " (ili_isoweekmean7_13_pr100| season)"
+#' offset <- "log(pop_jan1_n)"
+#'
+#' data <- attrib::data_fake_attrib_nation
 #'
 #' fit <- fit_attrib(data = data, response = response, fixef = fixef, ranef = ranef, offset = offset)
 #'

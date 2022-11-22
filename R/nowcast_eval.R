@@ -10,7 +10,8 @@
 #' @param n_week_adjusting Number of weeks to adjust
 #' @examples
 #'
-#'  data_aggregated <-  data.table::as.data.table(data_fake_nowcasting_county_aggregated)[location_code == "county03",]
+#'  data_aggregated <- data.table::as.data.table(data_fake_nowcasting_county_aggregated)
+#'  data_aggregated <- data_aggregated[location_code == "county_nor03",]
 #'  n_week_training <- 50
 #'  n_week_adjusting <- 5
 #'  date_0 <- data_aggregated[nrow(data_aggregated),]$cut_doe

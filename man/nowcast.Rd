@@ -15,7 +15,7 @@ nowcast(
 )
 }
 \arguments{
-\item{data_aggregated}{Aggregated dataset from the function npowcast_aggregate}
+\item{data_aggregated}{Aggregated dataset from the function nowcast_aggregate}
 
 \item{offset}{offset}
 
@@ -42,21 +42,32 @@ For more details see the help vignette:
 }
 \examples{
 
-data_aggregated <- data.table::as.data.table(data_fake_nowcasting_county_aggregated)
+data_aggregated <- attrib::data_fake_nowcasting_county_aggregated
 n_week_training <- 50
-n_week_adjusting <- 4
+n_week_adjusting <- 1
 date_0 <- data_aggregated[order(cut_doe)][nrow(data_aggregated)]$cut_doe + 1
 offset = "log(pop)"
-nowcast_object <- nowcast(data_aggregated,offset,n_week_adjusting,n_week_training,date_0)
+nowcast_object <- attrib::nowcast(
+  data_aggregated,
+  offset,
+  n_week_adjusting,
+  n_week_training,
+  date_0
+)
 
-
-data_aggregated <- data.table::as.data.table(data_fake_nowcasting_county_aggregated)
-data_aggregated <- data_aggregated[location_code == "county03"]
+data_aggregated <- attrib::data_fake_nowcasting_county_aggregated
+data_aggregated <- data_aggregated[location_code == "county_nor03"]
 n_week_training <- 50
-n_week_adjusting <- 4
+n_week_adjusting <- 1
 date_0 <- data_aggregated[order(cut_doe)][nrow(data_aggregated)]$cut_doe + 1
 offset = "log(pop)"
-nowcast_object <- nowcast(data_aggregated,offset,n_week_adjusting,n_week_training,date_0,
-nowcast_correction_fn = nowcast_correction_fn_quasipoisson,
-nowcast_correction_sim_fn = nowcast_correction_sim_quasipoisson)
+nowcast_object <- nowcast(
+  data_aggregated,
+  offset,
+  n_week_adjusting,
+  n_week_training,
+  date_0,
+  nowcast_correction_fn = nowcast_correction_fn_quasipoisson,
+  nowcast_correction_sim_fn = nowcast_correction_sim_quasipoisson
+)
 }

@@ -18,7 +18,7 @@
 #' #' nowcast_correction_object <- nowcast_correction_fn_simple(data, n_week_adjusting )
 #' #'
 #' nowcast_correction_fn_simple <- function(data, n_week_adjusting){
-#'   fit_vec<- vector(mode = "list", length = (n_week_adjusting+1))
+#'   fit_vec <- vector(mode = "list", length = (n_week_adjusting+1))
 #'   for ( i in 0:n_week_adjusting){
 #'
 #'     fit <- stats::glm(stats::as.formula(paste0("n_death", "~",  glue::glue("n0_{i}"))),
@@ -65,7 +65,7 @@
 #'
 #'   #for developping
 #'   # data<- as.data.table(data_fake_nowcasting_county_aggregated)
-#'   # data <- data[location_code == "county03"]
+#'   # data <- data[location_code == "county_nor03"]
 #'   # n_week_adjusting <- 8
 #'   # offset = TRUE
 #'   for ( i in 0:n_week_adjusting){

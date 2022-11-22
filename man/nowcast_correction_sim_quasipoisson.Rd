@@ -28,7 +28,8 @@ For more details see the help vignette:
 \code{vignette("nowcast", package="attrib")}
 }
 \examples{
-data <- data.table::as.data.table(data_fake_nowcasting_county_aggregated)[location_code == "county03"]
+data <- data.table::as.data.table(data_fake_nowcasting_county_aggregated)
+data <- data[location_code == "county_nor03"]
 n_week_adjusting <- 5
 n_week_train <- 52
 n_week_start <- n_week_adjusting + n_week_train

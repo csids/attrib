@@ -5,3 +5,6 @@ Jenkinsfile
 Makefile
 cran-comments.md
 ^LICENSE\.md$
+data-raw
+_pkgdown.yml
+x_tests
