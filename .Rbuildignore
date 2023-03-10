@@ -8,3 +8,5 @@ cran-comments.md
 data-raw
 _pkgdown.yml
 x_tests
+^doc$
+^Meta$
